@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @task.date %>
+</p>
+
+<p>
+  <strong>Done:</strong>
+  <%= @task.done %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @task.type %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @task.info %>
+</p>
+
+<% if @task.type == "Subtask" and not @task.main_task.nil? %>
+  main task: <%= link_to @task.main_task.name, @task.main_task %>
+<% end %>
+
+
+<ul>
+  <% if @task.type == "MainTask" %>
+    <% @task.subtasks.each do |subtask| %>
+      <li><%= link_to subtask.name, subtask %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
