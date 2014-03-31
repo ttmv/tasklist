@@ -1,11 +1,15 @@
 language: ruby
-
 rvm:
- - 2.0.0
-
+- 2.0.0
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -fd spec/
-
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -fd spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: S7QYt+zK1/ieKXBM1B5JM9DMGVjWk9xlAo47EzuI5lvGvhA/jRJp0SWFmmK14ONmlyJ830Deh9My+wNSTagQ54wWTal2ZhQ/0cCczBL++zjOIG5BbPm1iP7ZAwyLrNzFSZQ1ZZPhDC1ZuoLUHNTdEq1hXoIVTMnpxJgtKY9h7mY=
+  app: stark-beyond-4243
+  on:
+    repo: ttmv/tasklist

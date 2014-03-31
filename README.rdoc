@@ -1,3 +1,5 @@
 == README
 
 http://stark-beyond-4243.herokuapp.com/tasks
+
+{<img src="https://travis-ci.org/ttmv/tasklist.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/ttmv/tasklist]
