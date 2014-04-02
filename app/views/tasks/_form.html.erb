@@ -42,6 +42,7 @@
   <dic class="field">
     <%=  f.label :category %>
     <%= f.select :categories, options_from_collection_for_select(@categories, :id, :name) %>
+    <%= link_to 'new category', new_category_path %>
   </div>  
   <div class="actions">
     <%= f.submit %>
