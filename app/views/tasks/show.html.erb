@@ -6,6 +6,13 @@
 </p>
 
 <p>
+  Categories: 
+  <% @task.categories.each do |category| %>
+    <%= link_to category, category %></li>
+  <% end %>
+</p>
+
+<p>
   <strong>Date:</strong>
   <%= @task.date %>
 </p>

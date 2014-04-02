@@ -39,6 +39,10 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
+  <dic class="field">
+    <%=  f.label :category %>
+    <%= f.select :categories, options_from_collection_for_select(@categories, :id, :name) %>
+  </div>  
   <div class="actions">
     <%= f.submit %>
   </div>
