@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe "when tasks exist" do
+  User
+  UsersController
+  Category
+  CategoriesController
   it "lets user to navigate to the page of a task" do
     create_tasks
     visit tasks_path
