@@ -10,6 +10,12 @@
       </ul>
     </div>
   <% end %>
+  <% if @task.type == "Subtask" %>
+    <div class="field">
+      <%= f.label :main_task %>
+      <%= f.select :main_task_id, options_from_collection_for_select(@maintasks, :id, :name) %>
+    </div>   
+  <% end %>
 
   <div class="field">
     <%= f.label :name %><br>

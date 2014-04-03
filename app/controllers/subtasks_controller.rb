@@ -7,6 +7,7 @@ class SubtasksController < TasksController
   def new
     @task = Subtask.new
     @categs = Category.all
+    @maintasks = MainTask.all
   end
 
   private

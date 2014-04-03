@@ -24,14 +24,12 @@ end
 
 describe "A new task" do
   it "is saved if it has a name" do
-    Category.create name:"testikategoria"
-
     visit new_task_path
 
     fill_in('Name', with:'test')
     
     expect{
-      click_button "Create Task"
+      click_button "Create Main task"
     }.to change{Task.count}.from(0).to(1)
 
     task = Task.find_by name:"test"
