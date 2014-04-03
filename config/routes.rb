@@ -6,7 +6,7 @@ Tasklist::Application.routes.draw do
 
   resources :tasks
   
-  resources :subtasks, controller: 'tasks', type: 'subtask'
+  resources :subtasks
 
   resources :main_tasks, controller: 'tasks', type: 'main_task'
 

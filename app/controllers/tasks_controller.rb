@@ -25,8 +25,9 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    category = Category.find(params[:task][:categories])
+#    category = Category.find(params[:task][:categories])
     @task = Task.new(task_params)
+    @task.type = "MainTask" unless @task.type == "Subtask"
     @task.categories << category    
 
     respond_to do |format|
@@ -48,7 +49,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
-      category = Category.find(params[:task][:categories])
+      #category = Category.find(params[:task][:categories])
       @task.categories << category 
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
@@ -83,5 +84,9 @@ class TasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id)
+    end
+
+    def category
+      Category.find(params[:task][:categories])
     end
 end

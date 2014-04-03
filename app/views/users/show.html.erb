@@ -8,10 +8,19 @@
 <p>
   Tasks:
   <ul>
-    <% @user.tasks.each do |task| %>
-      <li> <%= link_to task.name, task %> <%= task.type %> <%= task.date %> </li>
+    <% @user.main_tasks.each do |task| %>
+      <li> <%= link_to task.name, task %> <%= task.date %> </li>
+      <ul>
+        <% task.subtasks.each do |subtask| %>
+          <li> <%= link_to subtask.name, subtask %> <%= subtask.date %> </li>
+        <% end %>
+      </ul>
     <% end %>
   </ul>
+</p>
+<p>
+  <%= link_to 'New task', new_task_path %>
+  <%= link_to 'New category', new_category_path %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
