@@ -3,7 +3,6 @@ require 'spec_helper'
 describe "when tasks exist" do
   User
   UsersController
-  Category
   CategoriesController
   it "lets user to navigate to the page of a task" do
     create_tasks
@@ -21,6 +20,24 @@ describe "when tasks exist" do
     expect(page).to have_content "subtask 1"
     expect(page).to have_content "subtask 2"
   end  
+end
+
+describe "A new task" do
+  it "is saved if it has a name" do
+    Category.create name:"testikategoria"
+
+    visit new_task_path
+
+    fill_in('Name', with:'test')
+    
+    expect{
+      click_button "Create Task"
+    }.to change{Task.count}.from(0).to(1)
+
+    task = Task.find_by name:"test"
+    expect(task).to be_valid
+    expect(task.type).to eq("MainTask")
+  end
 end
 
 def create_tasks
