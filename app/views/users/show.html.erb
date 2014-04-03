@@ -5,5 +5,13 @@
   <%= @user.username %>
 </p>
 
+<p>
+  Tasks:
+  <ul>
+    <% @user.tasks.each do |task| %>
+      <li> <%= link_to task.name, task %> <%= task.type %> <%= task.date %> </li>
+    <% end %>
+  </ul>
+</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -31,6 +31,10 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
+        if not current_user.nil? 
+          current_user.tasks << @task
+        end
+
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render action: 'show', status: :created, location: @task }
       else
@@ -44,6 +48,8 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
+      category = Category.find(params[:task][:categories])
+      @task.categories << category 
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
@@ -71,7 +77,7 @@ class TasksController < ApplicationController
     end
   
     def set_categories
-      @categories = Category.all
+      @categs = Category.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
