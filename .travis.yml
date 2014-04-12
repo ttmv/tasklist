@@ -10,6 +10,8 @@ deploy:
   provider: heroku
   api_key:
     secure: S7QYt+zK1/ieKXBM1B5JM9DMGVjWk9xlAo47EzuI5lvGvhA/jRJp0SWFmmK14ONmlyJ830Deh9My+wNSTagQ54wWTal2ZhQ/0cCczBL++zjOIG5BbPm1iP7ZAwyLrNzFSZQ1ZZPhDC1ZuoLUHNTdEq1hXoIVTMnpxJgtKY9h7mY=
+  run:
+    - "rake db:migrate"
   app: stark-beyond-4243
   on:
     repo: ttmv/tasklist

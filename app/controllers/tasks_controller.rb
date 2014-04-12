@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:new, :edit, :create]
+  before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
 
   # GET /tasks
   # GET /tasks.json
@@ -27,13 +28,10 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-    #@task.type = "MainTask" unless @task.type == "Subtask"
     @task.categories << category unless category.nil?    
     respond_to do |format|
       if @task.save
-        if not current_user.nil? 
-          current_user.tasks << @task
-        end
+        current_user.tasks << @task
 
         format.html { redirect_to @task, notice: 'Task was successfully created.' }
         format.json { render action: 'show', status: :created, location: @task }
@@ -87,6 +85,12 @@ class TasksController < ApplicationController
     def category 
       if params[:main_task][:categories]    
         Category.find(params[:main_task][:categories])
+      end
+    end
+
+    def check_signed_in
+      if current_user.nil?
+        redirect_to signin_path, notice: 'Sign in to create new task'
       end
     end
 end

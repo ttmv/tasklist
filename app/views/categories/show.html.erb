@@ -5,11 +5,17 @@
   <%= @category.name %>
 </p>
 <p>
-Tasks in this category:
-
-<% @category.tasks.each do |task| %>
-  <%= link_to task.name, task %>
-<% end %>
+  Tasks in this category:
+  <ul>
+    <% @category.tasks.each do |task| %>
+      <li> 
+        <%= link_to task.name, task %> <%= task.date %>    
+        <% if not task.main_task_id.nil? %>   
+          main task: <%= link_to task.main_task.name, task_path(task.main_task) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </p>
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
