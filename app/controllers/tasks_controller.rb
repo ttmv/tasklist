@@ -88,7 +88,7 @@ class TasksController < ApplicationController
       end
     end
 
-    def check_signed_in
+    def ensure_that_signed_in
       if current_user.nil?
         redirect_to signin_path, notice: 'Sign in to create new task'
       end
