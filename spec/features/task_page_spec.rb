@@ -24,6 +24,8 @@ end
 
 describe "A new task" do
   it "is saved if it has a name" do
+    create_user
+    sign_user_in
     visit new_task_path
 
     fill_in('Name', with:'test')
@@ -42,4 +44,15 @@ def create_tasks
   maintask = MainTask.create name:"main task 1"
   subtask = Subtask.create name: "subtask 1", main_task_id: maintask.id
   subtask2 = Subtask.create name: "subtask 2", main_task_id: maintask.id
+end
+
+def create_user
+  User.create username:"testuser", password: "testpass", password_confirmation: "testpass"
+end
+
+def sign_user_in
+  visit signin_path
+  fill_in('username', with:'testuser')
+  fill_in('password', with:'testpass')
+  click_button "Log in"
 end

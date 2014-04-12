@@ -330,8 +330,8 @@
         1,
         null,
         1,
-        8,
-        0,
+        15,
+        9,
         null,
         null
       ],
@@ -363,6 +363,8 @@
         1,
         1,
         1,
+        1,
+        1,
         null,
         1,
         null,
@@ -380,6 +382,17 @@
         2,
         2,
         2,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null
       ],
       "/home/ttm/koodit/tasklist/app/models/user.rb": [
@@ -460,7 +473,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -697,10 +710,25 @@
         null,
         null
       ],
-      "/home/ttm/koodit/tasklist/app/models/tasks_category.rb": [
+      "/home/ttm/koodit/tasklist/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         1,
+        0,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null
       ],
       "/home/ttm/koodit/tasklist/app/models/main_task.rb": [
@@ -710,6 +738,7 @@
         null
       ],
       "/home/ttm/koodit/tasklist/app/controllers/tasks_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -739,13 +768,10 @@
         null,
         1,
         1,
-        null,
         1,
         1,
         1,
         1,
-        0,
-        null,
         null,
         2,
         1,
@@ -801,9 +827,21 @@
         0,
         null,
         null,
+        null,
+        1,
+        2,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/home/ttm/koodit/tasklist/app/models/tasks_category.rb": [
+        1,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1396553009
+    "timestamp": 1397342565
   }
 }
