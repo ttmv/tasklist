@@ -7,9 +7,21 @@
 
 <p>
   Categories: 
-  <% @task.categories.each do |category| %>
-    <%= link_to category, category %></li>
+  <ul>
+    <% @task.categories.each do |category| %>
+      <li><%= link_to category, category %> <%= link_to 'remove', tasks_category_path(@task.task_category(category.id)), method: :delete %></li>
+    <% end %>
+  </ul>
+</p>
+
+<p>
+  Add category 
+  <%= form_for(@tasks_category) do |f| %>
+    <%= f.hidden_field :task_id, value: @task.id %>
+    <%= f.select :category_id, options_from_collection_for_select(@categs, :id, :name) %>
+    <%= f.submit value: "add" %>
   <% end %>
+
 </p>
 
 <p>

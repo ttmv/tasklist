@@ -37,7 +37,7 @@
     <%= f.text_area :info %>
   </div>
 
-  <dic class="field">
+  <div class="field">
     <%= f.label :category %>
     <%= f.select :categories, options_from_collection_for_select(@categs, :id, :name) %>
     <%= link_to 'new category', new_category_path %>

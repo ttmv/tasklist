@@ -4,4 +4,8 @@ class Task < ActiveRecord::Base
   has_many :categories, through: :tasks_categories
 
   validates :name, presence: true
+
+  def task_category(category)
+    TasksCategory.where(category_id: category ).where(task_id: self.id ).first.id
+  end
 end

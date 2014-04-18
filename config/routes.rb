@@ -4,6 +4,8 @@ Tasklist::Application.routes.draw do
   resources :users
   get 'signup', to: 'users#new'
 
+  resources :tasks_categories
+
   resources :tasks
   
   resources :subtasks
