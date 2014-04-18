@@ -14,14 +14,13 @@
   </ul>
 </p>
 
-<p>
-  Add category 
+<p> 
   <%= form_for(@tasks_category) do |f| %>
+    Add category:
     <%= f.hidden_field :task_id, value: @task.id %>
-    <%= f.select :category_id, options_from_collection_for_select(@categs, :id, :name) %>
+    <%= f.select :category_id, options_from_collection_for_select(@task.excluded_categories, :id, :name) %>
     <%= f.submit value: "add" %>
   <% end %>
-
 </p>
 
 <p>
@@ -50,8 +49,10 @@
 <% end %>
 
 
-<ul>
-  <% if @task.type == "MainTask" %>
+
+<% if @task.type == "MainTask" %>
+  <h4>Subtasks</h4> 
+  <ul>
     <% @task.subtasks.each do |subtask| %>
       <li><%= link_to subtask.name, subtask %></li>
     <% end %>

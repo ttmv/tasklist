@@ -8,4 +8,8 @@ class Task < ActiveRecord::Base
   def task_category(category)
     TasksCategory.where(category_id: category ).where(task_id: self.id ).first.id
   end
+
+  def excluded_categories
+     Category.all.select{ |c| !c.tasks.include? self }
+  end
 end
