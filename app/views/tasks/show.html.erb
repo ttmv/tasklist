@@ -49,7 +49,7 @@
 <% end %>
 
 
-
+<p>
 <% if @task.type == "MainTask" %>
   <h4>Subtasks</h4> 
   <ul>
@@ -57,7 +57,10 @@
       <li><%= link_to subtask.name, subtask %></li>
     <% end %>
   </ul>
-  <%= link_to 'add new subtask', new_subtask_path %> |
+  <%= link_to 'add new subtask', new_subtask_path %> 
 <% end %>
-<%= link_to 'Edit', edit_task_path(@task) %> |
+
+</p>
+<%= link_to 'Edit', edit_task_path(@task) %> 
+<%= link_to 'Destroy', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>|
 <%= link_to 'Back', tasks_path %>

@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :set_categories, only: [:show, :new, :edit, :create]
+  before_action :set_categories, only: [:show, :new, :edit, :create, :update]
   before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
 
   # GET /tasks
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
-      @task.categories << category  
+      @task.categories << category unless category.nil? 
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
