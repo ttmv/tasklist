@@ -50,7 +50,10 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
-      @task.categories << category unless category.nil? 
+      if !category.nil? and !@task.categories.include?category
+        @task.categories << category
+      end
+ 
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
