@@ -1,13 +1,13 @@
 class SubtasksController < TasksController
 
   def index
-    @tasks = Subtask.all
+    @tasks = current_user.subtasks
   end 
 
   def new
     @task = Subtask.new
     @categs = Category.all
-    @maintasks = MainTask.all
+    @maintasks = current_user.main_tasks
   end
 
   private

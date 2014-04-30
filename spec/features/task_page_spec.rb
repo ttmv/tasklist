@@ -8,12 +8,21 @@ describe "when tasks exist" do
   TasksCategory
 
   before :each do
+    user = FactoryGirl.create(:user)
+    sign_user_in
+
     main_task = FactoryGirl.create(:main_task)
     subtask1 = FactoryGirl.create(:subtask)
     subtask2 = FactoryGirl.create(:subtask, name: "Subtask 2")
 
     main_task.subtasks << subtask1
     main_task.subtasks << subtask2
+
+    user.tasks << main_task
+    user.tasks << subtask1
+    user.tasks << subtask2
+
+    create_task_with_categories(user)
   end
 
   it "lets user to navigate to the page of a task" do
@@ -37,13 +46,13 @@ describe "when tasks exist" do
     click_link "main task 1"
 
     select 'second category', from: 'tasks_category[category_id]'
-    expect{click_button 'add'}.to change{TasksCategory.count}.from(0).to(1)
+    expect{click_button 'add'}.to change{TasksCategory.count}.from(1).to(2)
 
     expect(page).to have_content 'second category remove'
   end  
 
   it "can be removed from category" do
-    create_task_with_categories
+
     visit tasks_path
     click_link 'task with categories'
 
@@ -83,12 +92,13 @@ end
 
 describe "An existing task" do
   before :each do
-    FactoryGirl.create(:main_task) 
+    user = FactoryGirl.create(:user)
+    task = FactoryGirl.create(:main_task) 
+    user.tasks << task
+    sign_user_in
   end
 
   it "can be updated to have a new name" do
-    create_user
-    sign_user_in
     visit tasks_path
     click_link "main task 1"
     click_link "Edit"
@@ -100,9 +110,6 @@ describe "An existing task" do
   end
 
   it "can not be updated to not to have a name" do
-    create_user
-    sign_user_in
-
     visit tasks_path
     click_link "main task 1"
     click_link "Edit"
@@ -114,9 +121,6 @@ describe "An existing task" do
   end
   
   it "can be removed" do
-    create_user
-    sign_user_in
-
     visit tasks_path
     click_link "main task 1"
     
@@ -132,10 +136,11 @@ def create_categories
   c2 = FactoryGirl.create(:category2)
 end
 
-def create_task_with_categories
+def create_task_with_categories(user)
   t = FactoryGirl.create(:main_task, name: 'task with categories')
-  c1 = FactoryGirl.create(:category)
-  t.categories << c1
+  c3 = FactoryGirl.create(:category, name: '3rd category')
+  t.categories << c3
+  user.tasks << t
 end
 
 def create_user

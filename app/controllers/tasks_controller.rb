@@ -1,12 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:show, :new, :edit, :create, :update]
-  before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
+#  before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
+  before_action :ensure_that_signed_in
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
+    #@tasks = Task.all
   end
 
   # GET /tasks/1
@@ -22,7 +24,8 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-    @maintasks = MainTask.all
+    @maintasks = current_user.main_tasks
+    #@maintasks = MainTask.all
   end
 
   # POST /tasks
