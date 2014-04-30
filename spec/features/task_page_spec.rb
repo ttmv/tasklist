@@ -6,25 +6,32 @@ describe "when tasks exist" do
   CategoriesController
   TasksCategoriesController
   TasksCategory
+
+  before :each do
+    main_task = FactoryGirl.create(:main_task)
+    subtask1 = FactoryGirl.create(:subtask)
+    subtask2 = FactoryGirl.create(:subtask, name: "Subtask 2")
+
+    main_task.subtasks << subtask1
+    main_task.subtasks << subtask2
+  end
+
   it "lets user to navigate to the page of a task" do
-    create_tasks
     visit tasks_path
     click_link "main task 1"
-
+    
     expect(page).to have_content "Name: main task 1"
   end
 
   it "if it is a main task and has subtasks, lists them on the page" do
-    create_tasks
     visit tasks_path
     click_link "main task 1"
 
-    expect(page).to have_content "subtask 1"
-    expect(page).to have_content "subtask 2"
+    expect(page).to have_content "Subtask 1"
+    expect(page).to have_content "Subtask 2"
   end
 
   it "when categories exist, they can be added to it" do
-    create_tasks
     create_categories
     visit tasks_path
     click_link "main task 1"
@@ -48,8 +55,8 @@ describe "A new task" do
   it "is saved if it has a name" do
     create_user
     sign_user_in
-    visit new_task_path
 
+    visit new_task_path
     fill_in('Name', with:'test')
     
     expect{
@@ -72,14 +79,16 @@ describe "A new task" do
     expect(page).to have_content "Name can't be blank"
     expect(Task.count).to eq(0)    
   end
-
 end
 
 describe "An existing task" do
+  before :each do
+    FactoryGirl.create(:main_task) 
+  end
+
   it "can be updated to have a new name" do
     create_user
     sign_user_in
-    maintask = MainTask.create name:"main task 1"
     visit tasks_path
     click_link "main task 1"
     click_link "Edit"
@@ -93,7 +102,7 @@ describe "An existing task" do
   it "can not be updated to not to have a name" do
     create_user
     sign_user_in
-    maintask = MainTask.create name:"main task 1"
+
     visit tasks_path
     click_link "main task 1"
     click_link "Edit"
@@ -107,7 +116,6 @@ describe "An existing task" do
   it "can be removed" do
     create_user
     sign_user_in
-    maintask = MainTask.create name:"main task 1"
 
     visit tasks_path
     click_link "main task 1"
@@ -119,27 +127,19 @@ describe "An existing task" do
   end
 end
 
-def create_tasks
-  maintask = MainTask.create name:"main task 1"
-  subtask = Subtask.create name: "subtask 1", main_task_id: maintask.id
-  subtask2 = Subtask.create name: "subtask 2", main_task_id: maintask.id
-end
-
 def create_categories
-  c1 = Category.create name: "first category"
-  c2 = Category.create name: "second category"
+  c1 = FactoryGirl.create(:category)
+  c2 = FactoryGirl.create(:category2)
 end
 
 def create_task_with_categories
-  t = Task.create name:'task with categories'
-  c1 = Category.create name: "first category"
-#  c2 = Category.create name: "second category"
+  t = FactoryGirl.create(:main_task, name: 'task with categories')
+  c1 = FactoryGirl.create(:category)
   t.categories << c1
-#  t.categories << c2
 end
 
 def create_user
-  User.create username:"testuser", password: "testpass", password_confirmation: "testpass"
+  FactoryGirl.create(:user)
 end
 
 def sign_user_in
