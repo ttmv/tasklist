@@ -28,6 +28,12 @@ class TasksController < ApplicationController
     #@maintasks = MainTask.all
   end
 
+  def mark_done
+    task = Task.find(params[:id])
+    task.update_attribute(:done, true)
+    redirect_to :back
+  end
+
   # POST /tasks
   # POST /tasks.json
   def create

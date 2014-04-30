@@ -17,7 +17,11 @@ Tasklist::Application.routes.draw do
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
   
- 
+  resources :tasks do
+    post 'mark_done', on: :member
+  end 
+
+
   root 'tasks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

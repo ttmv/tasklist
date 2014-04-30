@@ -29,8 +29,11 @@
 </p>
 
 <p>
-  <strong>Done:</strong>
-  <%= @task.done %>
+  <% if !@task.done %>
+    <%= link_to 'Done!', mark_done_task_path(@task.id), method: :post %>
+  <% else %>
+    Task is done!
+  <% end %>
 </p>
 
 <p>
