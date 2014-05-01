@@ -2,6 +2,7 @@ class Priority < ActiveRecord::Base
   has_many :tasks
 
   validates :value, uniqueness: true
+  validates :value, presence: true
 
   def to_s
     "#{value} #{description}"

@@ -556,8 +556,8 @@
         1,
         null,
         1,
-        134,
-        107,
+        142,
+        115,
         null,
         null
       ],
@@ -711,7 +711,20 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
         8,
+        8,
+        null,
+        null,
+        8,
+        null,
+        8,
+        0,
+        27,
+        0,
+        null,
         null,
         null,
         null,
@@ -736,6 +749,10 @@
         0,
         0,
         0,
+        0,
+        null,
+        0,
+        null,
         0,
         null,
         null,
@@ -832,6 +849,9 @@
         null,
         1,
         null,
+        9,
+        9,
+        null,
         1,
         2,
         null,
@@ -845,6 +865,7 @@
         1,
         1,
         null,
+        1,
         1,
         null,
         1,
@@ -1039,12 +1060,6 @@
         null,
         null
       ],
-      "/home/ttm/koodit/tasklist/app/models/main_task.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/home/ttm/koodit/tasklist/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -1065,8 +1080,14 @@
         0,
         null,
         null
+      ],
+      "/home/ttm/koodit/tasklist/app/models/main_task.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1398969088
+    "timestamp": 1398982477
   }
 }

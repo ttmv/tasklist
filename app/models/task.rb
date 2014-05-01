@@ -6,6 +6,9 @@ class Task < ActiveRecord::Base
 
   validates :name, presence: true
 
+  scope :finished, -> { where done:true }
+  scope :nonfinished, -> { where done:[nil, false] }
+
   def task_category(category)
     TasksCategory.where(category_id: category ).where(task_id: self.id ).first.id
   end

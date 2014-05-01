@@ -9,8 +9,21 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = current_user.tasks
-    #@tasks = Task.all
+    #@done_tasks = current_user.tasks.where(done:true)
+    #@tasks = current_user.tasks.where(done:[nil, false])
+
+    @done_tasks = current_user.tasks.finished
+    @tasks = current_user.tasks.nonfinished
+
+
+    order = params[:order] || 'date'
+    
+    case order
+      when 'name' then @tasks.sort_by!{ |t| t.name }
+      when 'date' then @tasks.sort_by!{ |t| t.date }
+      when 'type' then @tasks.sort_by!{ |t| t.type }
+    end
+    
   end
 
   # GET /tasks/1
@@ -33,7 +46,11 @@ class TasksController < ApplicationController
   def mark_done
     task = Task.find(params[:id])
     task.update_attribute(:done, true)
-    text = "task finished!"
+    if task.priority.done_text 
+      text = task.priority.done_text
+    else
+      text = "task finished!"
+    end
     redirect_to :back, notice: text
   end
 
