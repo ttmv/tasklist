@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+<h2>  <%= @user.username %> </h2>
 
 <p>
   Tasks:
@@ -11,7 +8,7 @@
     <% @user.main_tasks.each do |task| %>
       <li> <%= link_to task.name, task %> <%= task.date %> </li>
       <ul>
-        <% task.subtasks.each do |subtask| %>
+        <% task.subtasks.nonfinished.each do |subtask| %>
           <li> <%= link_to subtask.name, subtask %> <%= subtask.date %> </li>
         <% end %>
       </ul>
