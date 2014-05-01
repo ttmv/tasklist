@@ -16,10 +16,8 @@
 </p>
 
 <p>
-  <% unless @task.priority.nil? %>
-    <strong>priority:</strong> 
-    <%= @task.priority.value %>: <%= @task.priority.description %>
-  <% end %>
+  <strong>priority:</strong> 
+  <%= @task.priority %>
 </p>
 
 <p>

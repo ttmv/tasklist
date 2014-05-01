@@ -3,6 +3,8 @@ class TasksController < ApplicationController
   before_action :set_categories, only: [:show, :new, :edit, :create, :update]
 #  before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
   before_action :ensure_that_signed_in
+  before_action :set_priorities
+
 
   # GET /tasks
   # GET /tasks.json
@@ -91,6 +93,10 @@ class TasksController < ApplicationController
       @categs = Category.all
     end
 
+    def set_priorities
+      @priorities = Priority.all
+    end
+
     def ensure_that_signed_in
       if current_user.nil?
         redirect_to signin_path, notice: 'Sign in to create new task'
@@ -99,7 +105,7 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:main_task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id)
+      params.require(:main_task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
 
     def category 

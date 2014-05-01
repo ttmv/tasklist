@@ -16,7 +16,7 @@ class SubtasksController < TasksController
     end
 
     def task_params
-      params.require(:subtask).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id)
+      params.require(:subtask).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
 
 end

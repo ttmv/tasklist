@@ -43,7 +43,12 @@
     <%= link_to 'new category', new_category_path %>
   </div> 
 
+  <div class="field">
+    <%= f.label :priority %>
+    <%= f.select :priority_id, options_from_collection_for_select(@priorities, :id, :to_s) %>
   </div> 
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -10,7 +10,7 @@
       <th>Done</th>
       <th>Type</th>
       <th>Info</th>
-      <th></th>
+      <th>Priority</th>
       <th></th>
       <th></th>
     </tr>
@@ -24,6 +24,7 @@
         <td><%= task.done %></td>
         <td><%= task.type %></td>
         <td><%= task.info %></td>
+        <td><%= task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>

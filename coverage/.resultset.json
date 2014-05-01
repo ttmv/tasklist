@@ -194,6 +194,8 @@
         1,
         null,
         1,
+        null,
+        1,
         1,
         null,
         1,
@@ -277,6 +279,10 @@
         null
       ],
       "/home/ttm/koodit/tasklist/app/helpers/categories_helper.rb": [
+        1,
+        null
+      ],
+      "/home/ttm/koodit/tasklist/app/helpers/priorities_helper.rb": [
         1,
         null
       ],
@@ -660,6 +666,23 @@
       "/home/ttm/koodit/tasklist/spec/features/user_page_spec.rb": [
 
       ],
+      "/home/ttm/koodit/tasklist/spec/helpers/priorities_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/ttm/koodit/tasklist/spec/models/category_spec.rb": [
         1,
         null,
@@ -676,6 +699,22 @@
         null,
         1,
         1,
+        null,
+        null
+      ],
+      "/home/ttm/koodit/tasklist/spec/models/priority_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/home/ttm/koodit/tasklist/app/models/priority.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -705,6 +744,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         null,
@@ -714,6 +754,7 @@
         null,
         1,
         21,
+        null,
         null,
         null
       ],
@@ -788,6 +829,8 @@
         1,
         null,
         1,
+        1,
+        null,
         null,
         null,
         null,
@@ -814,6 +857,7 @@
         null,
         null,
         1,
+        0,
         0,
         0,
         0,
@@ -877,6 +921,10 @@
         null,
         1,
         28,
+        null,
+        null,
+        1,
+        28,
         0,
         null,
         null,
@@ -894,6 +942,6 @@
         null
       ]
     },
-    "timestamp": 1398867063
+    "timestamp": 1398944823
   }
 }
