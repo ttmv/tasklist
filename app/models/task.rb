@@ -13,5 +13,4 @@ class Task < ActiveRecord::Base
   def excluded_categories
      Category.all.select{ |c| !c.tasks.include? self }
   end
-
 end

@@ -1,3 +1,39 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//table, th, td {
+//  border: 1px solid black;
+//  border-collapse:collapse;
+//}
+
+#testing tr.alt td {
+  background-color:#EAEAEA;
+}
+
+table th {
+  background-color:#EAEAEA;
+}
+
+table td {
+  background-color:#fAfAfA;
+}
+
+body {
+  background-color: #cacaca
+}
+
+ul{
+  background-color:#fAfAfA;
+  width: 45%
+}
+
+.test666 {
+  background-color: #b0b0b0
+}
+
+.infobox {
+  background-color:#fAfAfA;
+  width: 50%
+}
+

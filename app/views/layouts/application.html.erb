@@ -7,21 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div>
+  <div class="nav">
+    <%= link_to 'tasks', tasks_path %>
+    <%= link_to 'categories', categories_path %>
+    <%= link_to 'priorities', priorities_path %>
+    <%= link_to 'users', users_path %>
+    |
+    <% unless current_user.nil? %>
+      signed in: <%= current_user.username %>  
+      <%= link_to 'signout', signout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'signin', signin_path %>
+      <%= link_to 'new user', signup_path %>  
+    <% end %>
 
-<%= link_to 'tasks', tasks_path %>
-<%= link_to 'categories', categories_path %>
-<%= link_to 'users', users_path %>
-|
-<% unless current_user.nil? %>
-  signed in: <%= current_user.username %>  
-  <%= link_to 'signout', signout_path, method: :delete %>
-<% else %>
-  <%= link_to 'signin', signin_path %>
-  <%= link_to 'new user', signup_path %>  
-<% end %>
-
-</div>
+  </div>
 
 <%= yield %>
 

@@ -3,9 +3,14 @@ require 'spec_helper'
 describe "when tasks exist" do
   User
   UsersController
+  Category
   CategoriesController
   TasksCategoriesController
   TasksCategory
+  SubtasksController
+  Subtask
+  Priority
+  PrioritiesController
 
   before :each do
     user = FactoryGirl.create(:user)
@@ -29,7 +34,7 @@ describe "when tasks exist" do
     visit tasks_path
     click_link "main task 1"
     
-    expect(page).to have_content "Name: main task 1"
+    expect(page).to have_content "main task 1"
   end
 
   it "if it is a main task and has subtasks, lists them on the page" do
@@ -106,7 +111,7 @@ describe "An existing task" do
     fill_in('Name', with:'A new task name')
     click_button "Update Main task"
 
-    expect(page).to have_content 'Name: A new task name'
+    expect(page).to have_content 'A new task name'
   end
 
   it "can not be updated to not to have a name" do

@@ -14,9 +14,8 @@
   <tbody>
     <% @priorities.each do |priority| %>
       <tr>
-        <td><%= priority.value %></td>
-        <td><%= priority.description %></td>
-        <td><%= link_to 'Show', priority %></td>
+        <td><%= link_to priority.value, priority %></td>
+        <td><%= link_to priority.description, priority %></td>
         <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
         <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

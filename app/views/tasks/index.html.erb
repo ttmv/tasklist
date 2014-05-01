@@ -2,17 +2,14 @@
 
 <h1>Listing tasks</h1>
 
-<table>
+<table id="testing">
   <thead>
     <tr>
       <th>Name</th>
       <th>Date</th>
-      <th>Done</th>
       <th>Type</th>
-      <th>Info</th>
+     <!--- <th>Info</th> -->
       <th>Priority</th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -21,15 +18,14 @@
       <tr>
         <td><%= link_to task.name, task %></td>
         <td><%= task.date %></td>
-        <td><%= task.done %></td>
         <td><%= task.type %></td>
-        <td><%= task.info %></td>
-        <td><%= task.priority %></td>
+        <!--- <td><%= task.info %></td> -->
+        <td><%= link_to task.priority, task.priority if task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
           <% if !task.done %>
-            <%= link_to 'Mark done', mark_done_task_path(task.id), method: :post %>
+            <%= button_to 'Done!', mark_done_task_path(task.id), method: :post %>
           <% end %>
         </td>
       </tr>

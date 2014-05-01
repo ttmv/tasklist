@@ -94,7 +94,7 @@ class TasksController < ApplicationController
     end
 
     def set_priorities
-      @priorities = Priority.all
+      @priorities = Priority.all.order(:value)
     end
 
     def ensure_that_signed_in

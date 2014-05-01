@@ -13,7 +13,7 @@
   <% if @task.type == "Subtask" %>
     <div class="field">
       <%= f.label :main_task %>
-      <%= f.select :main_task_id, options_from_collection_for_select(@maintasks, :id, :name) %>
+      <%= f.select :main_task_id, options_from_collection_for_select(@maintasks, :id, :name, selected: @task.main_task_id) %>
     </div>   
   <% end %>
 
@@ -38,14 +38,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :category %>
-    <%= f.select :categories, options_from_collection_for_select(@categs, :id, :name) %>
-    <%= link_to 'new category', new_category_path %>
-  </div> 
-
-  <div class="field">
     <%= f.label :priority %>
-    <%= f.select :priority_id, options_from_collection_for_select(@priorities, :id, :to_s) %>
+    <%= f.select :priority_id, options_from_collection_for_select(@priorities, :id, :to_s, selected: @task.priority_id) %>
   </div> 
 
 

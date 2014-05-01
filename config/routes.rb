@@ -23,6 +23,10 @@ Tasklist::Application.routes.draw do
     post 'mark_done', on: :member
   end 
 
+  #resources :subtasks do
+    post '/subtasks/new', to: 'subtasks#new'
+  #end 
+
 
   root 'tasks#index'
 

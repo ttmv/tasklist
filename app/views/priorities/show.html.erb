@@ -1,14 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Value:</strong>
-  <%= @priority.value %>
-</p>
+<h1>Priority level <%= @priority.value %> -- "<%= @priority.description %>" </h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @priority.description %>
-</p>
+
+<h3>Tasks with this priority:</h3>
+
+<ul>
+<% if current_user.nil? %>
+
+<% else %>
+  <% @priority.maintasks(current_user).each do |task| %>
+    <li>
+      <%= link_to task.name, task %>
+      <ul>
+        <% task.subtasks.each do |subtask| %>
+          <li> <%= link_to subtask.name, subtask %> </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+<h4>All subtasks with this priority: </h4>
+
+<ul>
+<% if current_user.nil? %>
+
+<% else %>
+
+  <% @priority.subtasks(current_user).each do |task| %>
+    <li>
+      <%= link_to task.name, task %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_priority_path(@priority) %> |
 <%= link_to 'Back', priorities_path %>

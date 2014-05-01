@@ -67,3 +67,15 @@ div {
     list-style: square;
   }
 }
+
+
+.nav a {
+  color: #fAfAfA;
+  &:visited {
+    color: #eaeaea;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
