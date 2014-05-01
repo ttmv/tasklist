@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :user
+  belongs_to :priority
   has_many :tasks_categories
   has_many :categories, through: :tasks_categories
 
@@ -12,4 +13,5 @@ class Task < ActiveRecord::Base
   def excluded_categories
      Category.all.select{ |c| !c.tasks.include? self }
   end
+
 end

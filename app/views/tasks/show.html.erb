@@ -6,6 +6,23 @@
 </p>
 
 <p>
+  <strong>Info:</strong>
+  <%= @task.info %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @task.date %>
+</p>
+
+<p>
+  <% unless @task.priority.nil? %>
+    <strong>priority:</strong> 
+    <%= @task.priority.value %>: <%= @task.priority.description %>
+  <% end %>
+</p>
+
+<p>
   Categories: 
   <ul>
     <% @task.categories.each do |category| %>
@@ -23,10 +40,6 @@
   <% end %>
 </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @task.date %>
-</p>
 
 <p>
   <% if !@task.done %>
@@ -41,11 +54,6 @@
   <%= @task.type %>
 </p>
 
-<p>
-  <strong>Info:</strong>
-  <%= @task.info %>
-</p>
-
 
 <% if @task.type == "Subtask" and not @task.main_task.nil? %>
   main task: <%= link_to @task.main_task.name, @task.main_task %>
@@ -57,7 +65,13 @@
   <h4>Subtasks</h4> 
   <ul>
     <% @task.subtasks.each do |subtask| %>
-      <li><%= link_to subtask.name, subtask %></li>
+      <li><%= link_to subtask.name, subtask %> 
+          <% if subtask.done %>
+            done!
+          <% else %>
+            <%= link_to 'done?', mark_done_task_path(subtask.id), method: :post %>
+          <% end %> 
+      </li>
     <% end %>
   </ul>
   <%= link_to 'add new subtask', new_subtask_path %> 

@@ -1,4 +1,6 @@
 Tasklist::Application.routes.draw do
+  resources :priorities
+
   resources :categories
 
   resources :users

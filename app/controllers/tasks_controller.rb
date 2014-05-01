@@ -31,7 +31,8 @@ class TasksController < ApplicationController
   def mark_done
     task = Task.find(params[:id])
     task.update_attribute(:done, true)
-    redirect_to :back
+    text = "task finished!"
+    redirect_to :back, notice: text
   end
 
   # POST /tasks
