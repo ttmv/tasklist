@@ -3,12 +3,12 @@
 <h2>  <%= @user.username %> </h2>
 
 <p>
-  Tasks:
+  <h4>Tasks:</h4>
   <ul>
     <% @user.main_tasks.each do |task| %>
       <li> <%= link_to task.name, task %> <%= task.date %> </li>
       <ul>
-        <% task.subtasks.nonfinished.each do |subtask| %>
+        <% task.subtasks.unfinished.each do |subtask| %>
           <li> <%= link_to subtask.name, subtask %> <%= subtask.date %> </li>
         <% end %>
       </ul>

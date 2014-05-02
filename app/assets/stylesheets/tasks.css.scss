@@ -2,14 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-//table, th, td {
-//  border: 1px solid black;
-//  border-collapse:collapse;
-//}
-
-#testing tr.alt td {
-  background-color:#EAEAEA;
+table {
+  border: 1px solid #E0E0E0;
+  //border-collapse:collapse;
 }
+
 
 table th {
   background-color:#EAEAEA;

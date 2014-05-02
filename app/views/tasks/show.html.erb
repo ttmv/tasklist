@@ -15,7 +15,7 @@
 
 <p>
   <strong>priority:</strong> 
-  <%= @task.priority %>
+  <%= link_to @task.priority, @task.priority if @task.priority %>
 </p>
 
 <p>
@@ -51,9 +51,38 @@
 
 <p>
 <% if @task.type == "MainTask" %>
-  <h4>Subtasks</h4> 
+  <h3>Subtasks</h3> 
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Priority</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @task.subtasks.unfinished.each do |subtask| %>
+        <tr>
+          <td><%= link_to subtask.name, subtask %></td>
+          <td><%= subtask.date %></td>
+          <td><%= link_to subtask.priority, subtask.priority if subtask.priority %></td>
+          <td>
+            <% if !subtask.done %>
+              <%= button_to 'Done!', mark_done_task_path(subtask.id), method: :post %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+  <h3>Finished subtasks</h3>
+
   <ul>
-    <% @task.subtasks.each do |subtask| %>
+    <% @task.subtasks.finished.each do |subtask| %>
       <li>
           <% if subtask.done %> 
             <%= link_to subtask.name, subtask, class: "test666" %>  
@@ -64,7 +93,9 @@
       </li>
     <% end %>
   </ul>
+
   <%= link_to 'add new subtask', new_subtask_path(@task.id), method: :post %> 
+
 <% end %>
 
 

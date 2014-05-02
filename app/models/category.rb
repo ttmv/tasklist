@@ -4,6 +4,10 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true
 
+  def tasks_of_user(user)
+     tasks.unfinished.order(:date).select{|t| t.user == user}
+  end
+
   def to_s
     "#{name}"
   end

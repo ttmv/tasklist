@@ -1,7 +1,19 @@
 class SubtasksController < TasksController
 
   def index
-    @tasks = current_user.subtasks
+   # @tasks = current_user.subtasks
+    @done_tasks = current_user.subtasks.finished
+    @tasks = current_user.subtasks.unfinished
+
+    order = params[:order] || 'date'
+    
+    case order
+      when 'name' then @tasks.sort_by!{ |t| t.name }
+      when 'date' then @tasks.sort_by!{ |t| t.date }
+      when 'type' then @tasks.sort_by!{ |t| t.type }
+    end    
+
+
   end 
 
   def new    

@@ -9,11 +9,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    #@done_tasks = current_user.tasks.where(done:true)
-    #@tasks = current_user.tasks.where(done:[nil, false])
-
-    @done_tasks = current_user.tasks.finished
-    @tasks = current_user.tasks.nonfinished
+    @done_tasks = current_user.main_tasks.finished
+    @tasks = current_user.main_tasks.unfinished
 
     order = params[:order] || 'date'
     
@@ -21,8 +18,7 @@ class TasksController < ApplicationController
       when 'name' then @tasks.sort_by!{ |t| t.name }
       when 'date' then @tasks.sort_by!{ |t| t.date }
       when 'type' then @tasks.sort_by!{ |t| t.type }
-    end
-    
+    end    
   end
 
   # GET /tasks/1
