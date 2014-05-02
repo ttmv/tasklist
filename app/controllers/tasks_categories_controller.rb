@@ -5,7 +5,7 @@ class TasksCategoriesController < ApplicationController
     respond_to do |format|
       if @tasks_category.save
         task = Task.find(params[:tasks_category][:task_id])
-        format.html { redirect_to task, notice: 'Task was successfully created.' }
+        format.html { redirect_to task }
         format.json { render action: 'show', status: :created, location: task }
       end
     end
