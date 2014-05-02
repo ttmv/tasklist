@@ -41,11 +41,12 @@ class TasksController < ApplicationController
   def mark_done
     task = Task.find(params[:id])
     task.update_attribute(:done, true)
-    if task.priority and task.priority.done_text 
+    if task.priority and task.priority.done_text and task.priority.done_text!=""
       text = task.priority.done_text
     else
       text = "task finished!"
     end
+
     redirect_to :back, notice: text
   end
 

@@ -101,7 +101,7 @@
 
 <p>
   <% if !@task.done %>
-    <%= button_to 'Task finished', mark_done_task_path(@task.id), method: :post %>
+    <%= button_to 'Done!', mark_done_task_path(@task.id), method: :post %>
   <% else %>
     Task is done!
   <% end %>
