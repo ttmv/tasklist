@@ -7,9 +7,6 @@
     <tr>
       <th><%= link_to 'Name', tasks_path(order:"name") %></th>
       <th><%= link_to 'Date', tasks_path(order:"date") %></th>
-      <th><%= link_to 'Type', tasks_path(order:"type") %></th>
-      <th>Main task</th>
-     <!--- <th>Info</th> -->
       <th><%= link_to 'Priority', tasks_path(order:'priority') %></th>
     </tr>
   </thead>
@@ -19,13 +16,13 @@
       <tr>
         <td><%= link_to task.name, task %></td>
         <td><%= task.date %></td>
-        <td><%= task.type %></td>
+        <!---<td><%= task.type %></td>
         <td>
           <% if task.type == "Subtask" %>
             <%= task.main_task.name %>
           <% end %>
         </td>
-        <!--- <td><%= task.info %></td> -->
+        <td><%= task.info %></td> -->
         <td><%= link_to task.priority, task.priority if task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -50,8 +47,8 @@
     <tr>
       <th>Name</th>
       <th>Date</th>
-      <th>Type</th>
-      <th>Main task</th>
+      <!---<th>Type</th>
+      <th>Main task</th> -->
       <th>Priority</th>
     </tr>
   </thead>
@@ -61,13 +58,13 @@
       <tr>
         <td><%= link_to task.name, task %></td>
         <td><%= task.date %></td>
-        <td><%= task.type %></td>
+        <!--- <td><%= task.type %></td>
         <td>
           <% if task.type == "Subtask" %>
             <%= task.main_task.name %>
           <% end %>
         </td>
-        <!--- <td><%= task.info %></td> -->
+        <td><%= task.info %></td> -->
         <td><%= link_to task.priority, task.priority if task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
