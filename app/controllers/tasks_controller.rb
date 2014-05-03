@@ -49,7 +49,6 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-    @task.categories << category unless category.nil?    
     respond_to do |format|
       if @task.save
         current_user.tasks << @task
@@ -67,10 +66,6 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1.json
   def update
     respond_to do |format|
-      if !category.nil? and !@task.categories.include?category
-        @task.categories << category
-      end
- 
       if @task.update(task_params)
         format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { head :no_content }
@@ -84,7 +79,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1
   # DELETE /tasks/1.json
   def destroy
-    @task.destroy
+    @task.destroy if current_user == @task.user
     respond_to do |format|
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
@@ -124,9 +119,4 @@ class TasksController < ApplicationController
       params.require(:main_task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
 
-    def category 
-      if params[:main_task][:categories]    
-        Category.find(params[:main_task][:categories])
-      end
-    end
 end

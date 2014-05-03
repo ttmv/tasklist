@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "when tasks exist" do
+describe "Existing tasks" do
   User
   UsersController
   Category
@@ -9,6 +9,7 @@ describe "when tasks exist" do
   TasksCategory
   SubtasksController
   Subtask
+
 
   before :each do
     user = FactoryGirl.create(:user)
@@ -64,6 +65,13 @@ describe "when tasks exist" do
       page.first(:link, "Destroy").click
     }.to change{Task.count}.by(-1)    
   end
+
+  it "can be marked done" do
+    page.first(:button, "Done!").click
+
+    expect(Task.find_by(name: "main task 1").done).to eq(true)
+  end
+
 
   it "when categories exist, they can be added to it" do
     create_categories
