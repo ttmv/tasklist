@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:show, :new, :edit, :create, :update]
-#  before_action :ensure_that_signed_in, only: [:new, :edit, :create, :destroy, :update]
   before_action :ensure_that_signed_in
   before_action :set_priorities
 
@@ -18,6 +17,7 @@ class TasksController < ApplicationController
       when 'name' then @tasks.sort_by!{ |t| t.name }
       when 'date' then @tasks.sort_by!{ |t| t.date }
       when 'type' then @tasks.sort_by!{ |t| t.type }
+      when 'priority' then @tasks = current_user.main_tasks.unfinished.includes(:priority).order("priorities.value")
     end    
   end
 
@@ -40,11 +40,7 @@ class TasksController < ApplicationController
   def mark_done
     task = Task.find(params[:id])
     task.update_attribute(:done, true)
-    if task.priority and task.priority.done_text and task.priority.done_text!=""
-      text = task.priority.done_text
-    else
-      text = "task finished!"
-    end
+    text = set_done_text(task)
 
     redirect_to :back, notice: text
   end
@@ -107,6 +103,14 @@ class TasksController < ApplicationController
 
     def set_priorities
       @priorities = Priority.all.order(:value)
+    end
+
+    def set_done_text(task)
+      if task.priority and task.priority.done_text and task.priority.done_text!=""
+        text = task.priority.done_text
+      else
+        text = "task finished!"
+      end
     end
 
     def ensure_that_signed_in

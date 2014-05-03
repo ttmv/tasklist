@@ -9,8 +9,6 @@ describe "when tasks exist" do
   TasksCategory
   SubtasksController
   Subtask
-  Priority
-  PrioritiesController
 
   before :each do
     user = FactoryGirl.create(:user)
@@ -28,21 +26,43 @@ describe "when tasks exist" do
     user.tasks << subtask2
 
     create_task_with_categories(user)
+
+    visit tasks_path
   end
 
   it "lets user to navigate to the page of a task" do
-    visit tasks_path
     click_link "main task 1"
     
     expect(page).to have_content "main task 1"
   end
 
-  it "if it is a main task and has subtasks, lists them on the page" do
-    visit tasks_path
+  it "if it is a main task and has subtasks, lists them on its page" do
     click_link "main task 1"
 
     expect(page).to have_content "Subtask 1"
     expect(page).to have_content "Subtask 2"
+  end
+
+  it "can be updated to have a new name" do
+    page.first(:link, "Edit").click
+    fill_in('Name', with:'A new task name')
+    
+    expect{ click_button "Update Main task" }.to change{Task.count}.by(0)
+    expect(page).to have_content 'A new task name'
+  end
+
+  it "can not be updated to not to have a name" do
+    page.first(:link, "Edit").click
+    fill_in('Name', with:'')
+    click_button "Update Main task"
+    
+    expect(page).to have_content "Name can't be blank"
+  end
+
+  it "can be removed" do
+    expect{
+      page.first(:link, "Destroy").click
+    }.to change{Task.count}.by(-1)    
   end
 
   it "when categories exist, they can be added to it" do
@@ -95,46 +115,6 @@ describe "A new task" do
   end
 end
 
-describe "An existing task" do
-  before :each do
-    user = FactoryGirl.create(:user)
-    task = FactoryGirl.create(:main_task) 
-    user.tasks << task
-    sign_user_in
-  end
-
-  it "can be updated to have a new name" do
-    visit tasks_path
-    click_link "main task 1"
-    click_link "Edit"
-
-    fill_in('Name', with:'A new task name')
-    click_button "Update Main task"
-
-    expect(page).to have_content 'A new task name'
-  end
-
-  it "can not be updated to not to have a name" do
-    visit tasks_path
-    click_link "main task 1"
-    click_link "Edit"
-
-    fill_in('Name', with:'')
-    click_button "Update Main task"
-    
-    expect(page).to have_content "Name can't be blank"
-  end
-  
-  it "can be removed" do
-    visit tasks_path
-    click_link "main task 1"
-    
-    expect{
-      click_link "Destroy"
-    }.to change{Task.count}.from(1).to(0)
-    
-  end
-end
 
 def create_categories
   c1 = FactoryGirl.create(:category)

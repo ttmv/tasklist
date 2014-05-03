@@ -16,13 +16,6 @@
       <tr>
         <td><%= link_to task.name, task %></td>
         <td><%= task.date %></td>
-        <!---<td><%= task.type %></td>
-        <td>
-          <% if task.type == "Subtask" %>
-            <%= task.main_task.name %>
-          <% end %>
-        </td>
-        <td><%= task.info %></td> -->
         <td><%= link_to task.priority, task.priority if task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -47,8 +40,6 @@
     <tr>
       <th>Name</th>
       <th>Date</th>
-      <!---<th>Type</th>
-      <th>Main task</th> -->
       <th>Priority</th>
     </tr>
   </thead>
@@ -57,14 +48,7 @@
     <% @done_tasks.each do |task| %>
       <tr>
         <td><%= link_to task.name, task %></td>
-        <td><%= task.date %></td>
-        <!--- <td><%= task.type %></td>
-        <td>
-          <% if task.type == "Subtask" %>
-            <%= task.main_task.name %>
-          <% end %>
-        </td>
-        <td><%= task.info %></td> -->
+        <td><%= task.date %></td>        
         <td><%= link_to task.priority, task.priority if task.priority %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>

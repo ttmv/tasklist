@@ -44,8 +44,8 @@
 </p>
 
 
-<% if @task.type == "Subtask" and not @task.main_task.nil? %>
-  main task: <%= link_to @task.main_task.name, @task.main_task %>
+<% if @task.type == "Subtask" and @task.main_task %>
+  Main task: <%= link_to @task.main_task.name, @task.main_task %>
 <% end %>
 
 
@@ -73,6 +73,8 @@
               <%= button_to 'Done!', mark_done_task_path(subtask.id), method: :post %>
             <% end %>
           </td>
+          <td><%= link_to 'Edit', edit_task_path(subtask) %></td>
+          <td><%= link_to 'Destroy', subtask, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
@@ -84,12 +86,8 @@
   <ul>
     <% @task.subtasks.finished.each do |subtask| %>
       <li>
-          <% if subtask.done %> 
-            <%= link_to subtask.name, subtask %>  
-          <% else %>
-            <%= link_to subtask.name, subtask %>
-            <%= link_to '[check done]', mark_done_task_path(subtask.id), method: :post %>
-          <% end %> 
+        <%= link_to subtask.name, subtask %>  <%= link_to 'Edit', edit_task_path(subtask) %>
+        <%= link_to 'Destroy', subtask, method: :delete, data: { confirm: 'Are you sure?' } %> 
       </li>
     <% end %>
   </ul>
