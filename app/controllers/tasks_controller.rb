@@ -35,7 +35,6 @@ class TasksController < ApplicationController
   # GET /tasks/1/edit
   def edit
     @maintasks = current_user.main_tasks
-    #@maintasks = MainTask.all
   end
 
   def mark_done

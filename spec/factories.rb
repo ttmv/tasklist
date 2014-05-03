@@ -20,4 +20,8 @@ FactoryGirl.define do
   factory :subtask do
     name "Subtask 1"
   end
+
+  factory :priority do
+    value 4
+  end
 end
