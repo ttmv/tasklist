@@ -118,5 +118,4 @@ class TasksController < ApplicationController
     def task_params
       params.require(:main_task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
-
 end

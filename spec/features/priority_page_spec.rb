@@ -65,8 +65,6 @@ describe "An existing priority" do
 end
 
 describe "A new priority" do
-  #let(:user){FactoryGirl.create(:user)}
-
   before :each do
     FactoryGirl.create(:user)
     sign_user_in

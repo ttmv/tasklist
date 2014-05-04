@@ -87,6 +87,7 @@ describe 'An existing category' do
   end
 end
 
+
 def create_category
   Category.create name: "testcateg" 
 end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_that_correct_user, only: [:edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -62,6 +63,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def ensure_that_correct_user
+      if @user != current_user
+        redirect_to :back, notice: 'can not destroy/update wrong user'
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
