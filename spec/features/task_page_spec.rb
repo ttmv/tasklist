@@ -60,8 +60,6 @@ describe "Existing tasks" do
     expect(page).to have_content "Name can't be blank"
   end
 
-
-#subtaskit lähtee samalla, vois olla erillinen testi
   it "can be removed" do
     expect{
       page.first(:link, "Destroy").click
@@ -85,14 +83,6 @@ describe "Existing tasks" do
 
     expect(page).to have_content 'second category remove'
   end  
-
-  #it "can be removed from category" do
-
-  #  visit tasks_path
-  #  click_link 'task with categories'
-
-  #  expect{click_link 'remove', {:id => category.to_param}}.to change{TasksCategory.count}.from(1).to(0)
-  #end
 end
 
 describe "A new task" do
