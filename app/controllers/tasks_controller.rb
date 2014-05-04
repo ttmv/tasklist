@@ -8,8 +8,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @done_tasks = current_user.main_tasks.finished
-    @tasks = current_user.main_tasks.unfinished
+    @done_tasks = done_tasks
+    @tasks = tasks
 
     order = params[:order] || 'date'
     
@@ -17,8 +17,9 @@ class TasksController < ApplicationController
       when 'name' then @tasks.sort_by!{ |t| t.name }
       when 'date' then @tasks.sort_by!{ |t| t.date }
       when 'type' then @tasks.sort_by!{ |t| t.type }
-      when 'priority' then @tasks = current_user.main_tasks.unfinished.includes(:priority).order("priorities.value")
+      when 'priority' then @tasks = priority_tasks
     end    
+   
   end
 
   # GET /tasks/1
@@ -120,8 +121,22 @@ class TasksController < ApplicationController
       end
     end
 
+    def done_tasks
+      current_user.main_tasks.finished
+    end
+
+    def tasks
+      current_user.main_tasks.unfinished
+    end
+
+    def priority_tasks
+      current_user.main_tasks.unfinished.includes(:priority).order("priorities.value")
+    end
+
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
       params.require(:main_task).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
+
 end
