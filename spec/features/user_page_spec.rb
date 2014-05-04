@@ -3,6 +3,7 @@ require 'spec_helper'
 describe 'An existing user' do
   before :each do
     FactoryGirl.create(:user)
+    FactoryGirl.create(:user, username: "user2")
     visit signin_path
   end
 
@@ -29,13 +30,18 @@ describe 'An existing user' do
 
     expect(page).to have_content "username and password do not match"
   end
+
+  it "is listed on users page" do
+    visit users_path
+    expect(page).to have_content "testuser"
+    expect(page).to have_content "user2"
+  end
 end
 
 describe 'when signed in' do
   before :each do
     user = FactoryGirl.create(:user)
     sign_user_in
-    #visit users_path(user)
   end
 
   it "can sign out by clicking signout link" do
@@ -49,7 +55,6 @@ describe 'when signed in' do
   end
 
   it 'can change password' do
-    #visit users_path
     click_link 'testuser'
     click_link 'Change password'
     fill_in('new password', with:'test_new')
@@ -88,6 +93,5 @@ describe 'A new user' do
 
     expect{click_button 'Create User'}.not_to change{User.count}
     expect(page).to have_content 'Username has already been taken'
-
   end
 end
