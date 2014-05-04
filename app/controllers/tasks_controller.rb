@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:show, :new, :edit, :create, :update]
-  before_action :ensure_that_signed_in
+  before_action :ensure_that_signed_in, except: [:show]
   before_action :set_priorities
 
 
@@ -110,7 +110,7 @@ class TasksController < ApplicationController
 
     def ensure_that_signed_in
       if current_user.nil?
-        redirect_to signin_path, notice: 'Sign in to create new task'
+        redirect_to signin_path
       end
     end
 

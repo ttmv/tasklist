@@ -8,19 +8,23 @@
 </head>
 <body>
   <div class="nav">
-    <%= link_to 'tasks', tasks_path %>
-    <%= link_to 'subtasks', subtasks_path %>
-    <%= link_to 'categories', categories_path %>
-    <%= link_to 'priorities', priorities_path %>
-    <%= link_to 'users', users_path %>
-    |
+    <%= link_to 'Tasks', tasks_path %>
+    <%= link_to 'Subtasks', subtasks_path %>
+    <%= link_to 'Categories', categories_path %>
+    <%= link_to 'Priorities', priorities_path %>
+    <%= link_to 'Users', users_path %>
+    || 
+    <%= link_to 'Add new task', new_task_path %>
+    <%= link_to 'Add new category', new_category_path %>
+    <%= link_to 'Add new priority', new_priority_path %>
+    ||
     <% unless current_user.nil? %>
-      signed in: <%= link_to current_user.username, current_user %>  
-      <%= link_to 'signout', signout_path, method: :delete %>
+      Signed in: <%= link_to current_user.username, current_user %>  
+      <%= link_to 'Signout', signout_path, method: :delete %>
     <% else %>
-      <%= link_to 'signin', signin_path %>
-      <%= link_to 'new user', signup_path %>  
-    <% end %>
+      <%= link_to 'Signin', signin_path %>
+      <%= link_to 'New user', signup_path %>  
+    <% end %>    
 
   </div>
 

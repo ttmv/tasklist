@@ -14,27 +14,27 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-04T04:31:47+03:00">2014-05-04T04:31:47+03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-04T15:50:35+03:00">2014-05-04T15:50:35+03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">91.84%</span></span>
+    (<span class="covered_percent"><span class="green">90.88%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.85
+         3.7
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>42</b> files in total.
-    <b>576</b> relevant lines. 
-    <span class="green"><b>529</b> lines covered</span> and
-    <span class="red"><b>47</b> lines missed </span>
+    <b>581</b> relevant lines. 
+    <span class="green"><b>528</b> lines covered</span> and
+    <span class="red"><b>53</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>148.0</td>
+        <td>149.5</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>11</td>
         <td>8</td>
         <td>3</td>
-        <td>9.8</td>
+        <td>9.5</td>
       </tr>
       
       <tr>
@@ -102,12 +102,12 @@
       
       <tr>
         <td class="strong"><a href="#8f32cf967eeea2367fe9134d66ee9263a616b562" class="src_link" title="app/controllers/tasks_categories_controller.rb">app/controllers/tasks_categories_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>27</td>
-        <td>16</td>
-        <td>16</td>
-        <td>0</td>
-        <td>1.1</td>
+        <td class="red strong">76.0 %</td>
+        <td>44</td>
+        <td>25</td>
+        <td>19</td>
+        <td>6</td>
+        <td>0.8</td>
       </tr>
       
       <tr>
@@ -117,7 +117,7 @@
         <td>62</td>
         <td>57</td>
         <td>5</td>
-        <td>3.9</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -187,7 +187,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -227,7 +227,7 @@
         <td>12</td>
         <td>12</td>
         <td>0</td>
-        <td>10.0</td>
+        <td>8.8</td>
       </tr>
       
       <tr>
@@ -393,11 +393,11 @@
       <tr>
         <td class="strong"><a href="#ed95ca0119a0d489e24f71f511178d697448c574" class="src_link" title="spec/features/task_page_spec.rb">spec/features/task_page_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>148</td>
-        <td>93</td>
-        <td>93</td>
+        <td>150</td>
+        <td>89</td>
+        <td>89</td>
         <td>0</td>
-        <td>3.4</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -548,14 +548,14 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="455" data-linenumber="9">
-          <span class="hits">455</span>
+        <li class="covered" data-hits="459" data-linenumber="9">
+          <span class="hits">459</span>
           
           <code class="ruby">    return nil if session[:user_id].nil? </code>
         </li>
       
-        <li class="covered" data-hits="429" data-linenumber="10">
-          <span class="hits">429</span>
+        <li class="covered" data-hits="434" data-linenumber="10">
+          <span class="hits">434</span>
           
           <code class="ruby">    User.find_by_id(session[:user_id]) </code>
         </li>
@@ -1652,14 +1652,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="6">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="6">
+          <span class="hits">25</span>
           
           <code class="ruby">    user = User.find_by username: params[:username]</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="7">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="7">
+          <span class="hits">25</span>
           
           <code class="ruby">    if user.nil? or not user.authenticate params[:password]</code>
         </li>
@@ -1676,14 +1676,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="10">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="10">
+          <span class="hits">25</span>
           
           <code class="ruby">      session[:user_id] = user.id</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="11">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="11">
+          <span class="hits">25</span>
           
           <code class="ruby">      redirect_to user, notice: &quot;Welcome back!&quot;</code>
         </li>
@@ -1941,11 +1941,11 @@
         <div class="source_table" id="8f32cf967eeea2367fe9134d66ee9263a616b562">
   <div class="header">
     <h3>app/controllers/tasks_categories_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="red">76.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>25</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
   </div>
   
@@ -1958,157 +1958,259 @@
           <code class="ruby">class TasksCategoriesController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">before_action :ensure_that_task_owner</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    @tasks_category = TasksCategory.new(tasks_category_params)</code>
+          <code class="ruby">  def create</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    respond_to do |format|</code>
+          <code class="ruby">    @tasks_category = TasksCategory.new(tasks_category_params)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">      if @tasks_category.save</code>
+          <code class="ruby">    respond_to do |format|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
+          <code class="ruby">      if @tasks_category.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
           <code class="ruby">        task = Task.find(params[:tasks_category][:task_id])</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
           <code class="ruby">        format.html { redirect_to task }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">        format.json { render action: &#39;show&#39;, status: :created, location: task }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">  def destroy</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
+          <code class="ruby">  def destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
           <code class="ruby">    @tasks_category = TasksCategory.find(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
           
           <code class="ruby">    @tasks_category.destroy</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="18">
+          
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="missed" data-hits="0" data-linenumber="19">
+          
           
           <code class="ruby">      format.html { redirect_to :back}</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">  </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def tasks_category_params</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">      params.require(:tasks_category).permit(:task_id, :category_id)</code>
+          <code class="ruby">    def ensure_that_task_owner</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      task = find_task</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="27">
+          
+          
+          <code class="ruby"> </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      if current_user != task.user</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="29">
+          
+          
+          <code class="ruby">        redirect_to :back, notice: &quot;cannot edit task if not a task owner&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def tasks_category_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      params.require(:tasks_category).permit(:task_id, :category_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def find_task</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      if params[:_method] == &quot;delete&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="39">
+          
+          
+          <code class="ruby">        task = Task.find_by_id(TasksCategory.find_by_id(params[:id]).task_id)       </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">      else      </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        task = Task.find_by_id(params[:tasks_category][:task_id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">end</code>
@@ -2153,7 +2255,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  before_action :ensure_that_signed_in</code>
+          <code class="ruby">  before_action :ensure_that_signed_in, except: [:show]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -2192,14 +2294,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="10" data-linenumber="11">
+          <span class="hits">10</span>
           
           <code class="ruby">    @done_tasks = current_user.main_tasks.finished</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="12">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="10" data-linenumber="12">
+          <span class="hits">10</span>
           
           <code class="ruby">    @tasks = current_user.main_tasks.unfinished</code>
         </li>
@@ -2210,8 +2312,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="14">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="10" data-linenumber="14">
+          <span class="hits">10</span>
           
           <code class="ruby">    order = params[:order] || &#39;date&#39;</code>
         </li>
@@ -2222,8 +2324,8 @@
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="16">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="10" data-linenumber="16">
+          <span class="hits">10</span>
           
           <code class="ruby">    case order</code>
         </li>
@@ -2234,8 +2336,8 @@
           <code class="ruby">      when &#39;name&#39; then @tasks.sort_by!{ |t| t.name }</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="18">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="28" data-linenumber="18">
+          <span class="hits">28</span>
           
           <code class="ruby">      when &#39;date&#39; then @tasks.sort_by!{ |t| t.date }</code>
         </li>
@@ -2288,8 +2390,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="27">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="6" data-linenumber="27">
+          <span class="hits">6</span>
           
           <code class="ruby">    @tasks_category = TasksCategory.new</code>
         </li>
@@ -2678,8 +2780,8 @@
           <code class="ruby">    def set_task</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="92">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="11" data-linenumber="92">
+          <span class="hits">11</span>
           
           <code class="ruby">      @task = Task.find(params[:id])</code>
         </li>
@@ -2702,8 +2804,8 @@
           <code class="ruby">    def set_categories</code>
         </li>
       
-        <li class="covered" data-hits="16" data-linenumber="96">
-          <span class="hits">16</span>
+        <li class="covered" data-hits="14" data-linenumber="96">
+          <span class="hits">14</span>
           
           <code class="ruby">      @categs = Category.all</code>
         </li>
@@ -2726,8 +2828,8 @@
           <code class="ruby">    def set_priorities</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="100">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="26" data-linenumber="100">
+          <span class="hits">26</span>
           
           <code class="ruby">      @priorities = Priority.all.order(:value)</code>
         </li>
@@ -2798,8 +2900,8 @@
           <code class="ruby">    def ensure_that_signed_in</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="112">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="20" data-linenumber="112">
+          <span class="hits">20</span>
           
           <code class="ruby">      if current_user.nil?</code>
         </li>
@@ -2807,7 +2909,7 @@
         <li class="missed" data-hits="0" data-linenumber="113">
           
           
-          <code class="ruby">        redirect_to signin_path, notice: &#39;Sign in to create new task&#39;</code>
+          <code class="ruby">        redirect_to signin_path</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="114">
@@ -3320,8 +3422,8 @@
           <code class="ruby">    def set_user</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="75">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="75">
+          <span class="hits">25</span>
           
           <code class="ruby">      @user = User.find(params[:id])</code>
         </li>
@@ -3545,7 +3647,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :tasks_categories</code>
+          <code class="ruby">  has_many :tasks_categories, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -3602,8 +3704,8 @@
           <code class="ruby">  def to_s</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="12">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="6" data-linenumber="12">
+          <span class="hits">6</span>
           
           <code class="ruby">    &quot;#{name}&quot;</code>
         </li>
@@ -3647,7 +3749,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :subtasks</code>
+          <code class="ruby">  has_many :subtasks, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -3893,7 +3995,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :tasks_categories</code>
+          <code class="ruby">  has_many :tasks_categories, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
@@ -3920,14 +4022,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="9">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="17" data-linenumber="9">
+          <span class="hits">17</span>
           
           <code class="ruby">  scope :finished, -&gt; { where done:true }</code>
         </li>
       
-        <li class="covered" data-hits="70" data-linenumber="10">
-          <span class="hits">70</span>
+        <li class="covered" data-hits="65" data-linenumber="10">
+          <span class="hits">65</span>
           
           <code class="ruby">  scope :unfinished, -&gt; { where done:[nil, false] }</code>
         </li>
@@ -3944,8 +4046,8 @@
           <code class="ruby">  def task_category(category)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
           <code class="ruby">    TasksCategory.where(category_id: category ).where(task_id: self.id ).first.id</code>
         </li>
@@ -3968,8 +4070,8 @@
           <code class="ruby">  def excluded_categories</code>
         </li>
       
-        <li class="covered" data-hits="19" data-linenumber="17">
-          <span class="hits">19</span>
+        <li class="covered" data-hits="15" data-linenumber="17">
+          <span class="hits">15</span>
           
           <code class="ruby">     Category.all.select{ |c| !c.tasks.include? self }</code>
         </li>
@@ -4055,19 +4157,19 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :tasks</code>
+          <code class="ruby">  has_many :tasks, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :main_tasks</code>
+          <code class="ruby">  has_many :main_tasks, dependent: :destroy</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :subtasks</code>
+          <code class="ruby">  has_many :subtasks, dependent: :destroy</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -6389,8 +6491,8 @@
     <h3>spec/features/task_page_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>93</b> relevant lines. 
-      <span class="green"><b>93</b> lines covered</span> and
+      <b>89</b> relevant lines. 
+      <span class="green"><b>89</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6482,14 +6584,14 @@
           <code class="ruby">  before :each do</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="15">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="15">
+          <span class="hits">7</span>
           
           <code class="ruby">    user = FactoryGirl.create(:user)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="16">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="16">
+          <span class="hits">7</span>
           
           <code class="ruby">    sign_user_in</code>
         </li>
@@ -6500,20 +6602,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="18">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="18">
+          <span class="hits">7</span>
           
           <code class="ruby">    main_task = FactoryGirl.create(:main_task)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="19">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="19">
+          <span class="hits">7</span>
           
           <code class="ruby">    subtask1 = FactoryGirl.create(:subtask)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="20">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="20">
+          <span class="hits">7</span>
           
           <code class="ruby">    subtask2 = FactoryGirl.create(:subtask, name: &quot;Subtask 2&quot;)</code>
         </li>
@@ -6524,14 +6626,14 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="22">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="22">
+          <span class="hits">7</span>
           
           <code class="ruby">    main_task.subtasks &lt;&lt; subtask1</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="23">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="23">
+          <span class="hits">7</span>
           
           <code class="ruby">    main_task.subtasks &lt;&lt; subtask2</code>
         </li>
@@ -6542,20 +6644,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="25">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="25">
+          <span class="hits">7</span>
           
           <code class="ruby">    user.tasks &lt;&lt; main_task</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="26">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="26">
+          <span class="hits">7</span>
           
           <code class="ruby">    user.tasks &lt;&lt; subtask1</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="27">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="27">
+          <span class="hits">7</span>
           
           <code class="ruby">    user.tasks &lt;&lt; subtask2</code>
         </li>
@@ -6566,8 +6668,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="29">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="29">
+          <span class="hits">7</span>
           
           <code class="ruby">    create_task_with_categories(user)</code>
         </li>
@@ -6578,8 +6680,8 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="31">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="31">
+          <span class="hits">7</span>
           
           <code class="ruby">    visit tasks_path</code>
         </li>
@@ -6770,154 +6872,154 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="63">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="63">
           
-          <code class="ruby">  it &quot;can be removed&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="64">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="64">
           
-          <code class="ruby">    expect{</code>
+          
+          <code class="ruby">#subtaskit lähtee samalla, vois olla erillinen testi</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
+          <code class="ruby">  it &quot;can be removed&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect{</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
           <code class="ruby">      page.first(:link, &quot;Destroy&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="66">
+        <li class="covered" data-hits="2" data-linenumber="68">
           <span class="hits">2</span>
           
-          <code class="ruby">    }.to change{Task.count}.by(-1)    </code>
+          <code class="ruby">    }.to change{Task.count}.by(-3)    </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="69">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="68">
+        <li class="never" data-hits="" data-linenumber="70">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="69">
+        <li class="covered" data-hits="1" data-linenumber="71">
           <span class="hits">1</span>
           
           <code class="ruby">  it &quot;can be marked done&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
           <code class="ruby">    page.first(:button, &quot;Done!&quot;).click</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="72">
+        <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(Task.find_by(name: &quot;main task 1&quot;).done).to eq(true)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="76">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;when categories exist, they can be added to it&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="77">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    create_categories</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="78">
           <span class="hits">1</span>
           
-          <code class="ruby">    visit tasks_path</code>
+          <code class="ruby">  it &quot;when categories exist, they can be added to it&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_link &quot;main task 1&quot;</code>
+          <code class="ruby">    create_categories</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    visit tasks_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
+          <code class="ruby">    click_link &quot;main task 1&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
           <code class="ruby">    select &#39;second category&#39;, from: &#39;tasks_category[category_id]&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="82">
+        <li class="covered" data-hits="4" data-linenumber="84">
           <span class="hits">4</span>
           
           <code class="ruby">    expect{click_button &#39;add&#39;}.to change{TasksCategory.count}.from(1).to(2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
+        <li class="covered" data-hits="1" data-linenumber="86">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(page).to have_content &#39;second category remove&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="87">
           
           
           <code class="ruby">  end  </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="87">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;can be removed from category&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="88">
@@ -6926,361 +7028,373 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="89">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="89">
           
-          <code class="ruby">    visit tasks_path</code>
+          
+          <code class="ruby">  #it &quot;can be removed from category&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="90">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="90">
           
-          <code class="ruby">    click_link &#39;task with categories&#39;</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="91">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  #  visit tasks_path</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="92">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="92">
           
-          <code class="ruby">    expect{click_link &#39;remove&#39;}.to change{TasksCategory.count}.from(1).to(0)</code>
+          
+          <code class="ruby">  #  click_link &#39;task with categories&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="94">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">  #  expect{click_link &#39;remove&#39;, {:id =&gt; category.to_param}}.to change{TasksCategory.count}.from(1).to(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
           
           
+          <code class="ruby">  #end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">describe &quot;A new task&quot; do</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="97">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;is saved if it has a name&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
-          <code class="ruby">    create_user</code>
+          <code class="ruby">describe &quot;A new task&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
-          <code class="ruby">    sign_user_in</code>
+          <code class="ruby">  it &quot;is saved if it has a name&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="101">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    visit new_task_path</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="102">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    fill_in(&#39;Name&#39;, with:&#39;test&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="103">
-          
-          
-          <code class="ruby">    </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="104">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect{</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      click_button &quot;Create Main task&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="106">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    }.to change{Task.count}.from(0).to(1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="108">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    task = Task.find_by name:&quot;test&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="109">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(task).to be_valid</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="110">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(task.type).to eq(&quot;MainTask&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="111">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="112">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &quot;can not be created without a name&quot; do </code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="114">
+        <li class="covered" data-hits="1" data-linenumber="100">
           <span class="hits">1</span>
           
           <code class="ruby">    create_user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="115">
+        <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
           <code class="ruby">    sign_user_in</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="102">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
           <code class="ruby">    visit new_task_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Name&#39;, with:&#39;test&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="105">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect{</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="107">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_button &quot;Create Main task&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="108">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    }.to change{Task.count}.from(0).to(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="109">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
+        <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
-          <code class="ruby">    fill_in(&#39;Name&#39;, with:&#39;&#39;)</code>
+          <code class="ruby">    task = Task.find_by name:&quot;test&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
+        <li class="covered" data-hits="1" data-linenumber="111">
           <span class="hits">1</span>
           
-          <code class="ruby">    click_button &quot;Create Main task&quot;</code>
+          <code class="ruby">    expect(task).to be_valid</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="120">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="121">
+        <li class="covered" data-hits="1" data-linenumber="112">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(page).to have_content &quot;Name can&#39;t be blank&quot;</code>
+          <code class="ruby">    expect(task.type).to eq(&quot;MainTask&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="122">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(Task.count).to eq(0)    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
+        <li class="never" data-hits="" data-linenumber="113">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="114">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;can not be created without a name&quot; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="116">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    create_user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="117">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    sign_user_in</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="118">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    visit new_task_path</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="119">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="120">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    fill_in(&#39;Name&#39;, with:&#39;&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="121">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    click_button &quot;Create Main task&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="122">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="123">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(page).to have_content &quot;Name can&#39;t be blank&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="124">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(Task.count).to eq(0)    </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="125">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="126">
           
           
+          <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="127">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="128">
           
-          <code class="ruby">def create_categories</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="128">
-          <span class="hits">1</span>
           
-          <code class="ruby">  c1 = FactoryGirl.create(:category)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="129">
           <span class="hits">1</span>
           
+          <code class="ruby">def create_categories</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="130">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  c1 = FactoryGirl.create(:category)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="131">
+          <span class="hits">1</span>
+          
           <code class="ruby">  c2 = FactoryGirl.create(:category2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="130">
+        <li class="never" data-hits="" data-linenumber="132">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="131">
+        <li class="never" data-hits="" data-linenumber="133">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="132">
+        <li class="covered" data-hits="1" data-linenumber="134">
           <span class="hits">1</span>
           
           <code class="ruby">def create_task_with_categories(user)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="133">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="135">
+          <span class="hits">7</span>
           
           <code class="ruby">  t = FactoryGirl.create(:main_task, name: &#39;task with categories&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="134">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="136">
+          <span class="hits">7</span>
           
           <code class="ruby">  c3 = FactoryGirl.create(:category, name: &#39;3rd category&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="135">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="137">
+          <span class="hits">7</span>
           
           <code class="ruby">  t.categories &lt;&lt; c3</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="136">
-          <span class="hits">8</span>
+        <li class="covered" data-hits="7" data-linenumber="138">
+          <span class="hits">7</span>
           
           <code class="ruby">  user.tasks &lt;&lt; t</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="137">
+        <li class="never" data-hits="" data-linenumber="139">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="138">
+        <li class="never" data-hits="" data-linenumber="140">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="139">
+        <li class="covered" data-hits="1" data-linenumber="141">
           <span class="hits">1</span>
           
           <code class="ruby">def create_user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="140">
+        <li class="covered" data-hits="2" data-linenumber="142">
           <span class="hits">2</span>
           
           <code class="ruby">  FactoryGirl.create(:user)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="141">
+        <li class="never" data-hits="" data-linenumber="143">
           
           
           <code class="ruby">end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="142">
+        <li class="never" data-hits="" data-linenumber="144">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="143">
+        <li class="covered" data-hits="1" data-linenumber="145">
           <span class="hits">1</span>
           
           <code class="ruby">def sign_user_in</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="144">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="146">
+          <span class="hits">25</span>
           
           <code class="ruby">  visit signin_path</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="145">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="147">
+          <span class="hits">25</span>
           
           <code class="ruby">  fill_in(&#39;username&#39;, with:&#39;testuser&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="146">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="148">
+          <span class="hits">25</span>
           
           <code class="ruby">  fill_in(&#39;password&#39;, with:&#39;testpass&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="147">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="25" data-linenumber="149">
+          <span class="hits">25</span>
           
           <code class="ruby">  click_button &quot;Log in&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="148">
+        <li class="never" data-hits="" data-linenumber="150">
           
           
           <code class="ruby">end</code>

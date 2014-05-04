@@ -1,4 +1,5 @@
 class TasksCategoriesController < ApplicationController
+before_action :ensure_that_task_owner
 
   def create
     @tasks_category = TasksCategory.new(tasks_category_params)
@@ -20,8 +21,24 @@ class TasksCategoriesController < ApplicationController
   end
 
   private
+
+    def ensure_that_task_owner
+      task = find_task
+ 
+      if current_user != task.user
+        redirect_to :back, notice: "cannot edit task if not a task owner"
+      end
+    end
   
     def tasks_category_params
       params.require(:tasks_category).permit(:task_id, :category_id)
+    end
+
+    def find_task
+      if params[:_method] == "delete"
+        task = Task.find_by_id(TasksCategory.find_by_id(params[:id]).task_id)       
+      else      
+        task = Task.find_by_id(params[:tasks_category][:task_id])
+      end
     end
 end

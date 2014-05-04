@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :user
   belongs_to :priority
-  has_many :tasks_categories
+  has_many :tasks_categories, dependent: :destroy
   has_many :categories, through: :tasks_categories
 
   validates :name, presence: true

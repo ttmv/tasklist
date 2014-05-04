@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :tasks
-  has_many :main_tasks
-  has_many :subtasks
+  has_many :tasks, dependent: :destroy
+  has_many :main_tasks, dependent: :destroy
+  has_many :subtasks, dependent: :destroy
 
   has_secure_password
 

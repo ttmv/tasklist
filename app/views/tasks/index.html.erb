@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<% if @tasks.first.type == "MainTask" %>
-  <h1>Tasks to do</h1>
-<% else %>
+<% if @tasks.first and @tasks.first.type == "Subtask" %>
   <h1>Subtasks to do</h1>
+<% else %>
+  <h1>Tasks to do</h1>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <% if @tasks.first.type == "Subtask" %>
+      <% if @tasks.length > 0 and @tasks.first.type == "Subtask" %>
         <th><%= link_to 'Name', subtasks_path(order:"name") %></th>
         <th><%= link_to 'Date', subtasks_path(order:"date") %></th>
         <th><%= link_to 'Priority', subtasks_path(order:'priority') %></th>
