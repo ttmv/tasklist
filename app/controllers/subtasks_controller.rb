@@ -11,6 +11,7 @@ class SubtasksController < TasksController
       when 'name' then @tasks.sort_by!{ |t| t.name }
       when 'date' then @tasks.sort_by!{ |t| t.date }
       when 'type' then @tasks.sort_by!{ |t| t.type }
+      when 'priority' then @tasks = current_user.subtasks.unfinished.includes(:priority).order("priorities.value")
     end    
 
 
