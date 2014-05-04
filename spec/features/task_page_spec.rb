@@ -72,6 +72,17 @@ describe "Existing tasks" do
     expect(Task.find_by(name: "main task 1").done).to eq(true)
   end
 
+  it "new subtasks can be added" do
+    click_link "main task 1"
+    click_link "add new subtask"
+    fill_in('Name', with:'Subtask 3 to main task 1')
+    expect{click_button 'Create Subtask'}.to change{Subtask.count}.by(1)
+    expect(page).to have_content 'Main task: main task 1'
+
+    click_link "main task 1"
+    expect(page).to have_content 'Subtask 3 to main task 1'
+    
+  end
 
   it "when categories exist, they can be added to it" do
     create_categories
