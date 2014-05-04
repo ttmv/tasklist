@@ -1,5 +1,7 @@
 class PrioritiesController < ApplicationController
   before_action :set_priority, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_that_signed_in, except: [:index, :show]
+
 
   # GET /priorities
   # GET /priorities.json
@@ -62,6 +64,13 @@ class PrioritiesController < ApplicationController
   end
 
   private
+    def ensure_that_signed_in
+      if current_user.nil?
+        redirect_to signin_path, notice: 'Sign in first'
+      end
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_priority
       @priority = Priority.find(params[:id])

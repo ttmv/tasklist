@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe "An existing priority" do
   before :each do
+    FactoryGirl.create(:user)
     FactoryGirl.create(:priority, description: "priority 1")
+    sign_user_in
     visit priorities_path
   end
 
@@ -63,6 +65,13 @@ describe "An existing priority" do
 end
 
 describe "A new priority" do
+  #let(:user){FactoryGirl.create(:user)}
+
+  before :each do
+    FactoryGirl.create(:user)
+    sign_user_in
+  end
+
   it "can be added from page" do
     visit priorities_path
     click_link "New Priority"

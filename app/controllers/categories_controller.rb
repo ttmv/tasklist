@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_that_signed_in, except: [:index, :show]
 
   # GET /categories
   # GET /categories.json
@@ -62,6 +63,14 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+    def ensure_that_signed_in
+      if current_user.nil?
+        redirect_to signin_path, notice: 'Sign in first'
+      end
+    end
+
+
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category = Category.find(params[:id])

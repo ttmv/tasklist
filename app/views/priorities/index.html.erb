@@ -5,9 +5,6 @@
     <tr>
       <th>Value</th>
       <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -15,7 +12,7 @@
     <% @priorities.each do |priority| %>
       <tr>
         <td><%= link_to priority.value, priority %></td>
-        <td><%= link_to priority.description, priority %></td>
+        <td><%= link_to priority.description, priority if priority.description %></td>
         <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
         <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

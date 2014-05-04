@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe 'A new category' do
+  before :each do
+    FactoryGirl.create(:user)
+    sign_user_in
+  end
+
   it 'can be saved with a valid name' do
     visit new_category_path
     fill_in('Name', with:'test category')
@@ -24,6 +29,11 @@ describe 'A new category' do
 end
 
 describe 'An existing category' do
+  before :each do
+    FactoryGirl.create(:user)
+    sign_user_in
+  end
+
   it 'can be seen in categories page' do
     create_category
     visit categories_path
