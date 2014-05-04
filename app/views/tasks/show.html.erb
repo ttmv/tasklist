@@ -22,11 +22,15 @@
   Categories: 
   <ul>
     <% @task.categories.each do |category| %>
-      <li><%= link_to category, category %> <%= link_to 'remove', tasks_category_path(@task.task_category(category.id)), method: :delete %></li>
+      <li><%= link_to category, category %> 
+      <% if current_user == @task.user %>
+        <%= link_to 'remove', tasks_category_path(@task.task_category(category.id)), method: :delete %></li>
+      <% end %>
     <% end %>
   </ul>
 </p>
 
+<% if current_user == @task.user %>
 <p> 
   <%= form_for(@tasks_category) do |f| %>
     Add category:
@@ -36,6 +40,7 @@
   <% end %>
 </p>
 
+<% end %>
 
 <p>
   <strong>Type:</strong>

@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_categories, only: [:show, :new, :edit, :create, :update]
   before_action :ensure_that_signed_in, except: [:show]
   before_action :set_priorities
-
+  before_action :ensure_that_owner, only: [:edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
@@ -107,6 +107,12 @@ class TasksController < ApplicationController
         text = "task finished!"
       end
     end
+
+    def ensure_that_owner
+      if @task.user != current_user 
+        redirect_to :back, notice: 'can not edit task if not task owner'
+      end
+    end 
 
     def ensure_that_signed_in
       if current_user.nil?

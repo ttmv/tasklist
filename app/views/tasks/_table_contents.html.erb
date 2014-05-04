@@ -11,13 +11,15 @@
             <% end %>
           </td>
         <% end %>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% if !task.done %>
-            <%= button_to 'Done!', mark_done_task_path(task.id), method: :post %>
-          <% end %>
-        </td>
+        <% if current_user == task.user %>
+          <td><%= link_to 'Edit', edit_task_path(task) %></td>
+          <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td>
+            <% if !task.done %>
+              <%= button_to 'Done!', mark_done_task_path(task.id), method: :post %>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
