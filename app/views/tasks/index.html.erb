@@ -7,67 +7,16 @@
 <% end %>
 
 <table>
-  <thead>
-    <tr>
-      <% if @tasks.length > 0 and @tasks.first.type == "Subtask" %>
-        <th><%= link_to 'Name', subtasks_path(order:"name") %></th>
-        <th><%= link_to 'Date', subtasks_path(order:"date") %></th>
-        <th><%= link_to 'Priority', subtasks_path(order:'priority') %></th>
-        <th><%= link_to 'Main Task', subtasks_path(order:'main_task') %></th>
-      <% else %>
-        <th><%= link_to 'Name', tasks_path(order:"name") %></th>
-        <th><%= link_to 'Date', tasks_path(order:"date") %></th>
-        <th><%= link_to 'Priority', tasks_path(order:'priority') %></th>
-      <% end %>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= link_to task.name, task %></td>
-        <td><%= task.date %></td>
-        <td><%= link_to task.priority, task.priority if task.priority %></td>
-        <% if task.type == "Subtask" and task.main_task %>  
-          <td><%= task.main_task.name %></td>
-        <% end %>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% if !task.done %>
-            <%= button_to 'Done!', mark_done_task_path(task.id), method: :post %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%= render 'table_head_index', tasks: @tasks %>
+  <%= render 'table_contents', tasks: @tasks %>
 </table>
-
-<br>
 
 <p><%= link_to 'New Task', new_task_path %></p>
 
 <h1> Finished tasks </h1>
 
-<table class="finished">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Priority</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @done_tasks.each do |task| %>
-      <tr>
-        <td><%= link_to task.name, task %></td>
-        <td><%= task.date %></td>        
-        <td><%= link_to task.priority, task.priority if task.priority %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<table>
+  <%= render 'table_head_index', tasks: @done_tasks %>
+  <%= render 'table_contents', tasks: @done_tasks %>
 </table>
 

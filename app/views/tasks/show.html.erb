@@ -48,72 +48,38 @@
 <% end %>
 
 
-<p>
 <% if @task.type == "MainTask" %>
   <h3>Subtasks</h3> 
 
   <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Date</th>
-        <th>Priority</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @task.subtasks.unfinished.each do |subtask| %>
-        <tr>
-          <td><%= link_to subtask.name, subtask %></td>
-          <td><%= subtask.date %></td>
-          <td><%= link_to subtask.priority, subtask.priority if subtask.priority %></td>
-          <% if current_user == @task.user %>
-            <td>
-              <% if !subtask.done %>
-                <%= button_to 'Done!', mark_done_task_path(subtask.id), method: :post %>
-              <% end %>
-            </td>
-            <td><%= link_to 'Edit', edit_task_path(subtask) %></td>
-            <td><%= link_to 'Destroy', subtask, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    </tbody>
+    <%= render 'table_head_show', tasks: @task.subtasks.unfinished %>
+    <%= render 'table_contents', tasks: @task.subtasks.unfinished %>
   </table>
-
-
-  <h3>Finished subtasks</h3>
-
-  <ul>
-    <% @task.subtasks.finished.each do |subtask| %>
-      <li>
-        <%= link_to subtask.name, subtask %> 
-        <% if current_user == @task.user %>
-          <%= link_to 'Edit', edit_task_path(subtask) %>
-          <%= link_to 'Destroy', subtask, method: :delete, data: { confirm: 'Are you sure?' } %> 
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
 
   <% if current_user and current_user == @task.user %>
     <%= link_to 'add new subtask', new_subtask_path(@task.id), method: :post %> 
   <% end %>
+
+
+  <h3>Finished subtasks</h3>
+
+  <table>
+    <%= render 'table_head_show', tasks: @task.subtasks.finished %>
+    <%= render 'table_contents', tasks: @task.subtasks.finished %>
+  </table>
+
 <% end %>
 
-
-
-  <p>
-    <% if !@task.done %>
-      <% if current_user == @task.user %>
-        <%= button_to 'Done!', mark_done_task_path(@task.id), method: :post %>
-      <% end %>      
-    <% else %>
-      Task is done!
-    <% end %>
-  </p>
-
+<p>
+  <% if !@task.done %>
+    <% if current_user == @task.user %>
+      <%= button_to 'Done!', mark_done_task_path(@task.id), method: :post %>
+    <% end %>      
+  <% else %>
+    Task is done!
+  <% end %>
 </p>
+
 <% if current_user == @task.user %>
   <%= link_to 'Edit', edit_task_path(@task) %> 
   <%= link_to 'Destroy', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>|
