@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tasks to do</h1>
+<% if @tasks.first.type == "MainTask" %>
+  <h1>Tasks to do</h1>
+<% else %>
+  <h1>Subtasks to do</h1>
+<% end %>
 
 <table>
   <thead>
@@ -9,6 +13,7 @@
         <th><%= link_to 'Name', subtasks_path(order:"name") %></th>
         <th><%= link_to 'Date', subtasks_path(order:"date") %></th>
         <th><%= link_to 'Priority', subtasks_path(order:'priority') %></th>
+        <th><%= link_to 'Main Task', subtasks_path(order:'main_task') %></th>
       <% else %>
         <th><%= link_to 'Name', tasks_path(order:"name") %></th>
         <th><%= link_to 'Date', tasks_path(order:"date") %></th>
@@ -23,6 +28,9 @@
         <td><%= link_to task.name, task %></td>
         <td><%= task.date %></td>
         <td><%= link_to task.priority, task.priority if task.priority %></td>
+        <% if task.type == "Subtask" and task.main_task %>  
+          <td><%= task.main_task.name %></td>
+        <% end %>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>

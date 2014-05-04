@@ -1,7 +1,6 @@
 class SubtasksController < TasksController
 
   def index
-   # @tasks = current_user.subtasks
     @done_tasks = current_user.subtasks.finished
     @tasks = current_user.subtasks.unfinished
 
@@ -13,12 +12,9 @@ class SubtasksController < TasksController
       when 'type' then @tasks.sort_by!{ |t| t.type }
       when 'priority' then @tasks = current_user.subtasks.unfinished.includes(:priority).order("priorities.value")
     end    
-
-
   end 
 
   def new    
-    #maintask = MainTask.find(params[:format])
     @task = Subtask.new
     @task.main_task_id = params[:format]
     @categs = Category.all
@@ -26,13 +22,9 @@ class SubtasksController < TasksController
   end
 
   private
-    def category
-      if params[:subtask][:categories]
-        Category.find(params[:subtask][:categories])
-      end
-    end
 
     def task_params
       params.require(:subtask).permit(:name, :date, :done, :type, :info, :main_task_id, :user_id, :priority_id)
     end
+
 end
