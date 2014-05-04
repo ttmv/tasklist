@@ -2,41 +2,34 @@
 
 <h1>Priority level <%= @priority.value %> -- <%= @priority.description %> </h1>
 
+<% if current_user %>
+  <h3>Tasks with this priority:</h3>
 
-<h3>Tasks with this priority:</h3>
+  <ul>
+    <% @priority.maintasks(current_user).each do |task| %>
+      <li>
+        <%= link_to task.name, task %>
+        <ul>
+          <% task.subtasks.each do |subtask| %>
+            <li> <%= link_to subtask.name, subtask %> </li>
+          <% end %>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
 
-<ul>
-<% if current_user.nil? %>
+  <h4>All subtasks with this priority: </h4>
 
-<% else %>
-  <% @priority.maintasks(current_user).each do |task| %>
-    <li>
-      <%= link_to task.name, task %>
-      <ul>
-        <% task.subtasks.each do |subtask| %>
-          <li> <%= link_to subtask.name, subtask %> </li>
-        <% end %>
-      </ul>
-    </li>
-  <% end %>
+  <ul>
+    <% @priority.subtasks(current_user).each do |task| %>
+      <li>
+        <%= link_to task.name, task %>
+      </li>
+    <% end %>
+  </ul>
+
+
+  <%= link_to 'Edit', edit_priority_path(@priority) %> |
 <% end %>
-</ul>
 
-<h4>All subtasks with this priority: </h4>
-
-<ul>
-<% if current_user.nil? %>
-
-<% else %>
-
-  <% @priority.subtasks(current_user).each do |task| %>
-    <li>
-      <%= link_to task.name, task %>
-    </li>
-  <% end %>
-<% end %>
-</ul>
-
-
-<%= link_to 'Edit', edit_priority_path(@priority) %> |
 <%= link_to 'Back', priorities_path %>

@@ -11,13 +11,17 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category, category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<% if current_user %>
+  <%= link_to 'New Category', new_category_path %>
+<% end %>
 
-<%= link_to 'New Category', new_category_path %>

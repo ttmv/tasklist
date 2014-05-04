@@ -13,8 +13,10 @@
       <tr>
         <td><%= link_to priority.value, priority %></td>
         <td><%= link_to priority.description, priority if priority.description %></td>
-        <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
-        <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_priority_path(priority) %></td>
+          <td><%= link_to 'Destroy', priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +24,6 @@
 
 <br>
 
-<%= link_to 'New Priority', new_priority_path %>
+<% if current_user %>
+  <%= link_to 'New Priority', new_priority_path %>
+<% end %>
