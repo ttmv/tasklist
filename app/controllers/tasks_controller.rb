@@ -19,7 +19,6 @@ class TasksController < ApplicationController
       when 'type' then @tasks.sort_by!{ |t| t.type }
       when 'priority' then @tasks = priority_tasks
     end    
-   
   end
 
   # GET /tasks/1

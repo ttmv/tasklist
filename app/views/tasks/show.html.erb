@@ -57,7 +57,7 @@
   <h3>Subtasks</h3> 
 
   <table>
-    <%= render 'table_head_show', tasks: @task.subtasks.unfinished %>
+    <%= render 'table_head_show' %>
     <%= render 'table_contents', tasks: @task.subtasks.unfinished %>
   </table>
 
@@ -69,7 +69,7 @@
   <h3>Finished subtasks</h3>
 
   <table>
-    <%= render 'table_head_show', tasks: @task.subtasks.finished %>
+    <%= render 'table_head_show' %>
     <%= render 'table_contents', tasks: @task.subtasks.finished %>
   </table>
 

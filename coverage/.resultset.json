@@ -858,7 +858,6 @@
         null,
         null,
         null,
-        null,
         1,
         9,
         null,
@@ -991,8 +990,8 @@
         null,
         1,
         null,
-        28,
-        88,
+        20,
+        80,
         null,
         1,
         1,
@@ -1317,12 +1316,6 @@
         null,
         null
       ],
-      "/home/ttm/koodit/tasklist/app/models/main_task.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/home/ttm/koodit/tasklist/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -1342,6 +1335,12 @@
         2,
         2,
         null,
+        null
+      ],
+      "/home/ttm/koodit/tasklist/app/models/main_task.rb": [
+        1,
+        1,
+        1,
         null
       ],
       "/home/ttm/koodit/tasklist/app/controllers/priorities_controller.rb": [
@@ -1430,6 +1429,6 @@
         null
       ]
     },
-    "timestamp": 1399245263
+    "timestamp": 1399327619
   }
 }
